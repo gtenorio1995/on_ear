@@ -153,6 +153,37 @@ header.scrollded {
   -webkit-background-clip: text;
   color: transparent;
 }
+.section__specs .specs__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+.section__specs .specs__cards .specs__card {
+  margin-top: 1.5rem;
+  height: 12.5rem;
+  padding-top: 1.25rem;
+  padding-left: 1.25rem;
+  background-color: hsl(0, 0%, 10%);
+  border: transparent;
+  border-radius: 0.5rem;
+}
+.section__specs .specs__cards .specs__card .card__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  column-gap: 1rem;
+}
+.section__specs .specs__cards .specs__card .card__title .card_img {
+  width: 2rem;
+  height: 2rem;
+}
+.section__specs .specs__cards .specs__card .card__title .card__h4 {
+  text-transform: capitalize;
+}
+.section__specs .specs__cards .specs__card .card__list .card__list-items {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
 
 #app {
   width: 100%;

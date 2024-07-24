@@ -62,3 +62,27 @@ function initSectionOffsetTop(){
     });
 }
 initSectionOffsetTop();
+
+function initScrollLinkInternos(){
+    const linksInternos = Array.from(document.querySelectorAll('#nav-header a[href^="#"]'));
+    
+    if(linksInternos){
+        function handleClickLink(e){
+            e.preventDefault();
+            const hrefLink = e.target.getAttribute('href');
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const section = document.querySelector(hrefLink);
+            const sectionPosition = section.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth',
+            })
+        }
+        
+        linksInternos.forEach((link)=>{
+            link.addEventListener('click', handleClickLink)
+        })
+    }
+}
+initScrollLinkInternos();
