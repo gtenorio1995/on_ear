@@ -1,0 +1,66 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// import mixins
+@mixin display($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+// config Hero
+.section__hero {
+    padding-top: converter(16);
+
+    .hero__h1 {
+        margin-bottom: converter(20);
+    }
+
+    .hero__h3 {
+        padding-bottom: converter(16);
+    }
+
+    .hero__paragraph {
+        padding-bottom: converter(8);
+    }
+
+    .hero__cta {
+        @include display(2fr 1fr, 1fr);
+        column-gap: converter(32);
+
+        .hero__price-tag {
+            display: flex;
+            column-gap: converter(8);
+            align-items: center;
+            padding: converter(4) converter(16);
+            background-color: colors.$black_Eerie;
+            border-radius: converter(8);
+            border: transparent;
+            justify-content: center;
+
+            font-weight: 600;
+        }
+
+        .hero__btn__add-cart {
+            padding: converter(16) converter(8);
+            border-radius: converter(8);
+            border: transparent;
+            background-color: colors.$black_Eerie;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                display: none;
+            }
+        }
+    }
+
+}

@@ -4,6 +4,8 @@
 
 // import components
 @use 'header';
+@use 'hero';
+@use 'specs';
 
 // import function
 @function converter($px) {
@@ -13,6 +15,10 @@
 // config App
 #app {
     width: 100%;
-    height: 100%;
     display: grid;
+
+    background-image: url(/src/img/67419097_9662746.webp);
+    background-size: 450px;
+    background-position: 10px -90px;
+    background-repeat: no-repeat;
 }

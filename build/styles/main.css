@@ -2,6 +2,8 @@ header {
   position: fixed;
   width: 100%;
   padding: 1rem 0;
+  transition: all 0.8s ease-in-out;
+  background-color: transparent;
 }
 header .container {
   display: grid;
@@ -36,9 +38,15 @@ header .container .header__nav__nav-header {
   position: absolute;
   transform: translate3d(-150%, 0, 0);
   transition: all 0.5s ease-in-out;
+  z-index: 10;
+}
+header .container .header__nav__nav-header ul {
+  background-color: hsl(0, 0%, 15%);
 }
 header .container .header__nav__nav-header ul li {
   padding: 1rem 0;
+}
+header .container .header__nav__nav-header ul li a {
   text-transform: capitalize;
   color: hsl(0, 0%, 92%);
 }
@@ -58,6 +66,7 @@ header .container .header__btn__menu-burguer {
 header .container .header__btn__menu-burguer span {
   height: 0.25rem;
   background-color: hsl(0, 0%, 92%);
+  transition: all 0.5s ease-in-out;
 }
 header .container .header__btn__menu-burguer span:nth-child(1) {
   width: 1rem;
@@ -76,11 +85,82 @@ header .container .header__btn__menu-burguer span:nth-child(3) {
   border-bottom-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
+header .container .header__btn__menu-burguer.open-menu span:nth-child(1) {
+  width: 2rem;
+  transform: rotate(45deg);
+  background-color: hsl(5, 85%, 35%);
+}
+header .container .header__btn__menu-burguer.open-menu span:nth-child(2) {
+  width: 0rem;
+}
+header .container .header__btn__menu-burguer.open-menu span:nth-child(3) {
+  width: 2rem;
+  transform: rotate(45deg);
+  background-color: hsl(5, 85%, 35%);
+}
+header.open-menu {
+  background-color: hsl(0, 0%, 15%);
+}
+header.scrollded {
+  background-color: hsl(0, 0%, 15%);
+}
+
+.section__hero {
+  padding-top: 1rem;
+}
+.section__hero .hero__h1 {
+  margin-bottom: 1.25rem;
+}
+.section__hero .hero__h3 {
+  padding-bottom: 1rem;
+}
+.section__hero .hero__paragraph {
+  padding-bottom: 0.5rem;
+}
+.section__hero .hero__cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 2rem;
+}
+.section__hero .hero__cta .hero__price-tag {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  padding: 0.25rem 1rem;
+  background-color: hsl(0, 0%, 10%);
+  border-radius: 0.5rem;
+  border: transparent;
+  justify-content: center;
+  font-weight: 600;
+}
+.section__hero .hero__cta .hero__btn__add-cart {
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  border: transparent;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__hero .hero__cta .hero__btn__add-cart p {
+  display: none;
+}
+
+.section__specs .specs__h2 {
+  background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
 #app {
   width: 100%;
-  height: 100%;
   display: grid;
+  background-image: url(/src/img/67419097_9662746.webp);
+  background-size: 450px;
+  background-position: 10px -90px;
+  background-repeat: no-repeat;
 }
 
 * {
@@ -96,6 +176,7 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
+  color: hsl(0, 0%, 92%);
 }
 
 h1,

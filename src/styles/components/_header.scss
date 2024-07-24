@@ -20,6 +20,9 @@ header {
     width: 100%;
     padding: converter(16) 0;
 
+    transition: all 0.8s ease-in-out;
+    background-color: transparent;
+
     .container {
         @include display(3fr 1fr, 1fr);
         align-items: center;
@@ -56,11 +59,18 @@ header {
             transform: translate3d(-150%, 0, 0);
             transition: all 0.5s ease-in-out;
 
+            z-index: 10;
+
             ul {
+                background-color: colors.$gray_Eerie;
+
                 li {
                     padding: converter(16) 0;
-                    text-transform: capitalize;
-                    color: colors.$white_text;
+
+                    a {
+                        text-transform: capitalize;
+                        color: colors.$white_text;
+                    }
                 }
             }
 
@@ -84,6 +94,7 @@ header {
             span {
                 height: converter(4);
                 background-color: colors.$white_text;
+                transition: all 0.5s ease-in-out;
 
                 &:nth-child(1) {
                     width: converter(16);
@@ -106,6 +117,33 @@ header {
                 }
             }
 
+            &.open-menu {
+                span {
+                    &:nth-child(1) {
+                        width: converter(32);
+                        transform: rotate(45deg);
+                        background-color: colors.$red_rufous;
+                    }
+
+                    &:nth-child(2) {
+                        width: converter(0);
+                    }
+
+                    &:nth-child(3) {
+                        width: converter(32);
+                        transform: rotate(45deg);
+                        background-color: colors.$red_rufous;
+                    }
+                }
+            }
         }
+    }
+
+    &.open-menu {
+        background-color: colors.$gray_Eerie;
+    }
+
+    &.scrollded {
+        background-color: colors.$gray_Eerie;
     }
 }

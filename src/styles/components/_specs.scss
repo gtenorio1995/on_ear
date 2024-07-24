@@ -1,0 +1,25 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// import mixins
+@mixin display($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+// config Specs
+.section__specs {
+    .specs__h2 {
+        background: colors.$linear_orange-to-white;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
