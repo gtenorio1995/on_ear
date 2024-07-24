@@ -1,0 +1,79 @@
+// import config
+@use 'sass:math';
+@use 'components/app';
+@use 'config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// reset global
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+
+    background-color: colors.$gray_Eerie;
+
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+button {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: converter(48);
+}
+
+h2 {
+    font-size: converter(32);
+}
+
+h3 {
+    font-size: converter(24);
+}
+
+h4 {
+    font-size: converter(20);
+}
+
+h5 {
+    font-size: converter(16);
+    font-weight: 700;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1280px;
+}

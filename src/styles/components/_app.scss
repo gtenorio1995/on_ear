@@ -1,0 +1,18 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import components
+@use 'header';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// config App
+#app {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}

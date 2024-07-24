@@ -1,0 +1,111 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// import mixins
+@mixin display($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+// config Header
+header {
+    position: fixed;
+    width: 100%;
+    padding: converter(16) 0;
+
+    .container {
+        @include display(3fr 1fr, 1fr);
+        align-items: center;
+
+        .header__brand {
+            font-size: converter(24);
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+
+            grid-column: 1 / 2;
+
+            a {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: colors.$white_text;
+
+                img {
+                    width: converter(60);
+                    height: converter(60);
+                }
+            }
+
+        }
+
+        .header__nav__nav-header {
+            @include display(1fr, repeat(4, 1fr));
+            justify-self: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            position: absolute;
+
+            transform: translate3d(-150%, 0, 0);
+            transition: all 0.5s ease-in-out;
+
+            ul {
+                li {
+                    padding: converter(16) 0;
+                    text-transform: capitalize;
+                    color: colors.$white_text;
+                }
+            }
+
+            &.open-menu {
+                transform: translate3d(0%, 0, 0);
+            }
+        }
+
+        .header__btn__menu-burguer {
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(4);
+            max-width: converter(40);
+
+            grid-column: 2 / 3;
+            justify-self: end;
+
+            background: transparent;
+            border: none;
+
+            span {
+                height: converter(4);
+                background-color: colors.$white_text;
+
+                &:nth-child(1) {
+                    width: converter(16);
+                    border-bottom-left-radius: converter(4);
+                    border-top-right-radius: converter(4);
+                    margin-right: auto;
+                }
+
+                &:nth-child(2) {
+                    width: converter(24);
+                    border-bottom-left-radius: converter(4);
+                    border-top-right-radius: converter(4);
+                    margin: 0 auto;
+                }
+
+                &:nth-child(3) {
+                    width: converter(40);
+                    border-bottom-left-radius: converter(4);
+                    border-top-right-radius: converter(4);
+                }
+            }
+
+        }
+    }
+}
