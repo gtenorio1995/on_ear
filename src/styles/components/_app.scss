@@ -21,4 +21,10 @@
     background-size: 450px;
     background-position: 10px -90px;
     background-repeat: no-repeat;
+
+    .slider-wrapper {
+        overflow: hidden;
+        max-width: 100%;
+        margin: 0 converter(64) converter(56);
+    }
 }

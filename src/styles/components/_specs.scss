@@ -16,48 +16,47 @@
 
 // config Specs
 .section__specs {
+    width: 100%;
+
     .specs__h2 {
         background: colors.$linear_orange-to-white;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
+        margin-bottom: converter(24)
     }
 
-    .specs__cards {
-        @include display(1fr, repeat(2, 1fr));
+    .carousel {
+        .carousel-indicators {
+            bottom: converter(-40);
+        }
 
-        .specs__card {
-            margin-top: converter(24);
-            height: converter(200);
-            padding-top: converter(20);
-            padding-left: converter(20);
-            background-color: colors.$black_Eerie;
-            border: transparent;
-            border-radius: converter(8);
+        .carousel-inner {
+            .carousel-item {
+                background-color: colors.$black_Eerie;
+                padding: converter(20);
+                border-radius: converter(8);
+                width: converter(290);
+                height: converter(190);
 
-            .card__title {
-                display: flex;
-                align-items: center;
-                margin-bottom: converter(16);
-                column-gap: converter(16);
+                .card__title {
+                    display: flex;
+                    column-gap: converter(8);
+                    align-items: center;
+                    margin-bottom: converter(16);
 
-                .card_img {
-                    width: converter(32);
-                    height: converter(32);
+                    .card__h4 {
+                        margin: 0;
+                        text-transform: capitalize;
+                    }
                 }
 
-                .card__h4 {
-                    text-transform: capitalize;
-                }
-            }
-
-            .card__list {
-                .card__list-items {
-                    font-size: converter(20);
-                    line-height: converter(32);
+                .card__list {
+                    .card__list-items {
+                        padding: 0;
+                    }
                 }
             }
         }
     }
-
 }

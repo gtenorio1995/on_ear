@@ -147,42 +147,38 @@ header.scrollded {
   display: none;
 }
 
+.section__specs {
+  width: 100%;
+}
 .section__specs .specs__h2 {
   background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  margin-bottom: 1.5rem;
 }
-.section__specs .specs__cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr);
+.section__specs .carousel .carousel-indicators {
+  bottom: -2.5rem;
 }
-.section__specs .specs__cards .specs__card {
-  margin-top: 1.5rem;
-  height: 12.5rem;
-  padding-top: 1.25rem;
-  padding-left: 1.25rem;
+.section__specs .carousel .carousel-inner .carousel-item {
   background-color: hsl(0, 0%, 10%);
-  border: transparent;
+  padding: 1.25rem;
   border-radius: 0.5rem;
+  width: 18.125rem;
+  height: 11.875rem;
 }
-.section__specs .specs__cards .specs__card .card__title {
+.section__specs .carousel .carousel-inner .carousel-item .card__title {
   display: flex;
+  column-gap: 0.5rem;
   align-items: center;
   margin-bottom: 1rem;
-  column-gap: 1rem;
 }
-.section__specs .specs__cards .specs__card .card__title .card_img {
-  width: 2rem;
-  height: 2rem;
-}
-.section__specs .specs__cards .specs__card .card__title .card__h4 {
+.section__specs .carousel .carousel-inner .carousel-item .card__title .card__h4 {
+  margin: 0;
   text-transform: capitalize;
 }
-.section__specs .specs__cards .specs__card .card__list .card__list-items {
-  font-size: 1.25rem;
-  line-height: 2rem;
+.section__specs .carousel .carousel-inner .carousel-item .card__list .card__list-items {
+  padding: 0;
 }
 
 #app {
@@ -192,6 +188,11 @@ header.scrollded {
   background-size: 450px;
   background-position: 10px -90px;
   background-repeat: no-repeat;
+}
+#app .slider-wrapper {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 4rem 3.5rem;
 }
 
 * {
