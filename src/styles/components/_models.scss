@@ -1,0 +1,97 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// import mixins
+@mixin display($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+// config Models
+.section__models {
+    width: 100%;
+
+    .models__carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        .models__carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            // column-gap: converter(16);
+
+            .models__carousel-item {
+                width: 100%;
+                min-width: 100%;
+                box-sizing: border-box;
+
+                .models__card {
+                    @include display(1fr, 3fr 1fr 1fr);
+                    background-color: colors.$black_Eerie;
+                    padding: converter(20);
+                    border: 1px solid transparent;
+                    border-radius: converter(8);
+                    justify-items: center;
+
+                    >img {
+                        width: converter(200);
+                    }
+
+                    >h4 {
+                        width: 100%;
+                        font-size: converter(24);
+                        font-weight: 600;
+                        margin-top: converter(8);
+                    }
+
+                    .card__details {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: converter(8);
+
+                        .card__price {
+                            font-size: converter(20);
+                            font-weight: 800;
+                        }
+
+                        .models__card__btn-buy {
+                            padding: converter(8) converter(16);
+                            text-transform: uppercase;
+                            border: 1px solid transparent;
+                            border-radius: converter(8);
+                            background: colors.$linear_orange-to-white;
+                            color: colors.$gray_Eerie;
+                        }
+                    }
+                }
+            }
+        }
+
+        .models__carousel__btn {
+            border-radius: 50%;
+            padding: converter(4);
+        }
+
+        .models__carousel__btn-prev {
+            >img {
+                transform: rotate(90deg);
+            }
+        }
+
+        .models__carousel__btn-next {
+            >img {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

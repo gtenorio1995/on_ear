@@ -6,6 +6,7 @@
 @use 'header';
 @use 'hero';
 @use 'specs';
+@use 'models';
 
 // import function
 @function converter($px) {
@@ -21,10 +22,4 @@
     background-size: 450px;
     background-position: 10px -90px;
     background-repeat: no-repeat;
-
-    .slider-wrapper {
-        overflow: hidden;
-        max-width: 100%;
-        margin: 0 converter(64) converter(56);
-    }
 }

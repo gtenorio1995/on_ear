@@ -18,7 +18,7 @@
 .section__specs {
     width: 100%;
 
-    .specs__h2 {
+    .h2-section {
         background: colors.$linear_orange-to-white;
         background-clip: text;
         -webkit-background-clip: text;
@@ -32,12 +32,15 @@
         }
 
         .carousel-inner {
+
             .carousel-item {
                 background-color: colors.$black_Eerie;
                 padding: converter(20);
                 border-radius: converter(8);
-                width: converter(290);
+                width: 100%;
                 height: converter(190);
+                opacity: 0.1;
+                transition: all 0.4s ease-in-out;
 
                 .card__title {
                     display: flex;
@@ -56,6 +59,38 @@
                         padding: 0;
                     }
                 }
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .carousel-control-prev {
+            position: absolute;
+            top: 220px;
+            left: 30%;
+
+            border-radius: 50%;
+            border: 1px solid #fff;
+            height: converter(40);
+
+            img {
+                transform: rotate(90deg);
+            }
+        }
+
+        .carousel-control-next {
+            position: absolute;
+            top: 220px;
+            right: 30%;
+
+            border-radius: 50%;
+            border: 1px solid #fff;
+            height: converter(40);
+
+            img {
+                transform: rotate(-90deg);
             }
         }
     }
