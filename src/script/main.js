@@ -96,12 +96,12 @@ initScrollLinkInternos();
 
 function initCarouselCube(){
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
+        // slidesPerView: 1,
         effect: "cube",
         grabCursor: true,
         cubeEffect: {
-          shadow: true,
-          slideShadows: true,
+          shadow: false,
+          slideShadows: false,
           shadowOffset: 0,
           shadowScale: 0,
         },
@@ -109,6 +109,7 @@ function initCarouselCube(){
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
         },
     });
 }
