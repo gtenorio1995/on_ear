@@ -113,3 +113,29 @@ function initCarouselCube(){
     });
 }
 initCarouselCube();
+
+function initScrollLinkFooter(){
+    const linksFooter = Array.from(document.querySelectorAll('footer a[href^="#"]'));
+    
+    if(linksFooter){
+        function handleClickLinkFooter(e){
+            e.preventDefault();
+            const hrefLink = e.target.getAttribute('href');
+            const sectionLink = document.querySelector(hrefLink);
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const sectionPosition = sectionLink.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: "smooth",
+            })
+            
+        }
+    
+        linksFooter.forEach((link)=>{
+            link.addEventListener('click', handleClickLinkFooter)
+        })
+    }
+}
+
+initScrollLinkFooter();
