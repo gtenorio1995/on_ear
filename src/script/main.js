@@ -100,10 +100,10 @@ function initCarouselCube(){
           shadowScale: 0,
         },
         loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: false,
+        // },
         pagination: {
             el: ".swiper-pagination",
         },
