@@ -212,21 +212,17 @@ header.scrollded {
 .section__models {
   width: 100%;
 }
-.section__models .models__carousel {
+.section__models .swiper {
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  left: 0;
 }
-.section__models .models__carousel .models__carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
+.section__models .swiper .swiper-wrapper .swiper-slide {
+  background-position: center;
+  background-size: cover;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item {
-  width: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-}
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr 1fr;
@@ -236,27 +232,27 @@ header.scrollded {
   border-radius: 0.5rem;
   justify-items: center;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card > img {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card > img {
   width: 12.5rem;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card > h4 {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card > h4 {
   width: 100%;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 0.5rem;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card .card__details {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card .card__details {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.5rem;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card .card__details .card__price {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card .card__details .card__price {
   font-size: 1.25rem;
   font-weight: 800;
 }
-.section__models .models__carousel .models__carousel-inner .models__carousel-item .models__card .card__details .models__card__btn-buy {
+.section__models .swiper .swiper-wrapper .swiper-slide .models__card .card__details .models__card__btn-buy {
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   border: 1px solid transparent;
@@ -264,15 +260,20 @@ header.scrollded {
   background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
   color: hsl(0, 0%, 15%);
 }
-.section__models .models__carousel .models__carousel__btn {
-  border-radius: 50%;
-  padding: 0.25rem;
+.section__models .swiper .swiper-wrapper .swiper-slide > img {
+  display: block;
+  width: 100%;
+  max-width: 268px;
+  height: 100%;
+  max-height: 268px;
 }
-.section__models .models__carousel .models__carousel__btn-prev > img {
-  transform: rotate(90deg);
+.section__models .swiper .swiper-pagination {
+  margin-top: 1rem;
+  position: absolute;
+  bottom: -20px;
 }
-.section__models .models__carousel .models__carousel__btn-next > img {
-  transform: rotate(-90deg);
+.section__models .swiper .swiper-pagination .swiper-pagination-bullet {
+  background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
 }
 
 #app {

@@ -88,41 +88,25 @@ function initScrollLinkInternos(){
 initScrollLinkInternos();
 
 
-
-
-
-
-
-
-
-let currentIndex = 0;
-
-function showSlide(index) {
-    const slides = Array.from(document.querySelectorAll('.models__carousel-item'));
-    if (index >= slides.length) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else {
-        currentIndex = index;
-    }
-    const offset = -currentIndex * 100;
-    const tela = window.innerWidth;
-    document.querySelector('#models-carousel-inner').style.transform = `translateX(${offset}%)`;
+function initCarouselCube(){
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        effect: "cube",
+        grabCursor: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 0,
+          shadowScale: 0,
+        },
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
 }
-
-const btnPrev = document.querySelector('#models-btn-prev');
-const btnNext = document.querySelector('#models-btn-next');
-
-function prevSlide(){
-    showSlide(currentIndex - 1);
-}
-
-function nextSlide(){
-    showSlide(currentIndex + 1);
-}
-
-btnPrev.addEventListener('click', prevSlide);
-btnNext.addEventListener('click', nextSlide);
-
-setInterval(nextSlide, 3000);
+initCarouselCube();
