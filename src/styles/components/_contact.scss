@@ -1,0 +1,71 @@
+// import config
+@use 'sass:math';
+@use '../config/colors';
+
+// import function
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// import mixins
+@mixin display($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+// config Models
+.section__contact {
+    background-color: colors.$black_Eerie;
+    padding: converter(24) 0;
+
+    .contact__form {
+        @include display(1fr, auto);
+        row-gap: converter(16);
+
+        >div {
+            display: flex;
+            flex-direction: column;
+
+            >label {
+                text-transform: capitalize;
+                font-family: 'Poppins', sans-serif;
+                background: colors.$linear_orange-to-white;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+
+            >input {
+                border-radius: converter(8);
+                border: 1px solid transparent;
+                height: converter(24);
+                padding: converter(16) converter(8);
+                background: colors.$white_text;
+                color: colors.$black_night;
+            }
+
+            >textarea {
+                width: 100%;
+                height: converter(120);
+                border: 1px solid transparent;
+                border-radius: converter(8);
+                resize: none;
+                padding: converter(8);
+            }
+        }
+
+        .form__btn-submit {
+            padding: converter(8) converter(16);
+            border-radius: converter(8);
+            border: 1px solid transparent;
+            width: converter(96);
+            justify-self: right;
+            background: colors.$linear_orange-to-white;
+
+            &:hover {
+                box-shadow: colors.$orange 0px 30px 60px -12px inset, colors.$orange 0px 18px 36px -18px inset;
+            }
+        }
+    }
+}

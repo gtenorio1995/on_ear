@@ -68,6 +68,10 @@
                             border-radius: converter(8);
                             background: colors.$linear_orange-to-white;
                             color: colors.$gray_Eerie;
+
+                            &:hover {
+                                box-shadow: colors.$orange 0px 30px 60px -12px inset, colors.$orange 0px 18px 36px -18px inset;
+                            }
                         }
                     }
                 }
@@ -85,7 +89,7 @@
         .swiper-pagination {
             margin-top: converter(16);
             position: absolute;
-            bottom: -20px;
+            bottom: -32px;
 
             .swiper-pagination-bullet {
                 background: colors.$linear_orange-to-white;

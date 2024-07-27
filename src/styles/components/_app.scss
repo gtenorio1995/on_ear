@@ -7,6 +7,8 @@
 @use 'hero';
 @use 'specs';
 @use 'models';
+@use 'contact';
+@use 'footer';
 
 // import function
 @function converter($px) {

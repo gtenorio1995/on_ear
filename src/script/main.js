@@ -78,6 +78,12 @@ function initScrollLinkInternos(){
                 top: sectionPosition,
                 behavior: 'smooth',
             })
+            const headerOpen = document.querySelector('header');
+            headerOpen.classList.toggle('open-menu');
+            const navHeader = document.querySelector('#nav-header');
+            navHeader.classList.toggle('open-menu');
+            const btnMobile = document.querySelector('#menu-burguer');
+            btnMobile.classList.toggle('open-menu');
         }
         
         linksInternos.forEach((link)=>{
