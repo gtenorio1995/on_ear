@@ -15,52 +15,73 @@
 }
 
 // config Hero
-.section__hero {
-    padding-top: converter(16);
+@media screen and (min-width: 320px) {
+    .section__hero {
+        padding-top: converter(16);
 
-    .hero__h1 {
-        margin-bottom: converter(20);
-    }
-
-    .hero__h3 {
-        padding-bottom: converter(16);
-    }
-
-    .hero__paragraph {
-        padding-bottom: converter(8);
-    }
-
-    .hero__cta {
-        @include display(2fr 1fr, 1fr);
-        column-gap: converter(32);
-
-        .hero__price-tag {
-            display: flex;
-            column-gap: converter(8);
-            align-items: center;
-            padding: converter(4) converter(16);
-            background-color: colors.$black_Eerie;
-            border-radius: converter(8);
-            border: transparent;
-            justify-content: center;
-
-            font-weight: 600;
+        .hero__h1 {
+            margin-bottom: converter(20);
         }
 
-        .hero__btn__add-cart {
-            padding: converter(16) converter(8);
-            border-radius: converter(8);
-            border: transparent;
-            background-color: colors.$black_Eerie;
+        .hero__h3 {
+            padding-bottom: converter(16);
+        }
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .hero__paragraph {
+            padding-bottom: converter(8);
+        }
 
-            p {
-                display: none;
+        .hero__cta {
+            @include display(2fr 1fr, 1fr);
+            column-gap: converter(32);
+
+            .hero__price-tag {
+                display: flex;
+                column-gap: converter(8);
+                align-items: center;
+                padding: converter(4) converter(16);
+                background-color: colors.$black_Eerie;
+                border-radius: converter(8);
+                border: transparent;
+                justify-content: center;
+
+                font-weight: 600;
+            }
+
+            .hero__btn__add-cart {
+                padding: converter(16) converter(8);
+                border-radius: converter(8);
+                border: transparent;
+                background-color: colors.$black_Eerie;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    display: none;
+                }
             }
         }
     }
+}
 
+@media screen and (min-width: 768px) {
+    .section__hero {
+
+        .hero__h1 {
+            margin-bottom: converter(40);
+            margin-top: converter(64);
+        }
+
+        .hero__paragraph {
+            width: 50%;
+        }
+
+        .hero__cta {
+            @include display(1.5fr 1fr, 1fr);
+            width: 50%;
+            column-gap: converter(16);
+        }
+    }
 }

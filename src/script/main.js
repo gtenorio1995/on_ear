@@ -3,7 +3,15 @@ function initHeightNavigation(){
     
     if(navHeader){
         const heightHeader = document.querySelector('header').offsetHeight;
-        navHeader.style.top = heightHeader + 'px';
+
+        const media320 = window.matchMedia('(min-width: 320px) and (max-width: 767px)').matches;
+        const media768 = window.matchMedia('(min-width: 768px)').matches;
+
+        if(media320){
+            navHeader.style.top = heightHeader + 'px';
+        }else if(media768){
+            navHeader.style.top = 0;
+        }
     }
 }
 initHeightNavigation();

@@ -16,12 +16,28 @@
 }
 
 // config App
-#app {
-    width: 100%;
-    display: grid;
+@media screen and (min-width: 320px) {
+    #app {
+        width: 100%;
+        display: grid;
 
-    background-image: url(/src/img/67419097_9662746.webp);
-    background-size: 450px;
-    background-position: 10px -90px;
-    background-repeat: no-repeat;
+        background-image: url(/src/img/67419097_9662746.webp);
+        background-size: 450px;
+        background-position: 10px -90px;
+        background-repeat: no-repeat;
+
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #app {
+        background-position: 150px -90px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #app {
+        background-position: 350px 65px;
+    }
 }
