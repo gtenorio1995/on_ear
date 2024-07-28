@@ -56,6 +56,7 @@
                 @include display(1fr, repeat(4, 1fr));
                 justify-self: center;
                 width: 100%;
+                max-width: 1280px;
                 height: 100%;
                 text-align: center;
                 position: absolute;

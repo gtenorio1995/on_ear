@@ -15,82 +15,116 @@
 }
 
 // config Specs
-.section__specs {
-    width: 100%;
+@media screen and (min-width: 320px) {
+    .section__specs {
+        width: 100%;
 
-    .h2-section {
-        background: colors.$linear_orange-to-white;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        margin-bottom: converter(24)
+        .h2-section {
+            background: colors.$linear_orange-to-white;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: converter(24)
+        }
+
+        .specs-carousel {
+            width: 100%;
+            height: 100%;
+
+            >.swiper-wrapper {
+
+                .swiper-slide {
+                    background-color: colors.$black_Eerie;
+                    padding: converter(20);
+                    border-radius: converter(8);
+                    width: 100%;
+                    height: converter(190);
+                    transition: all 0.4s ease-in-out;
+
+                    .card__title {
+                        display: flex;
+                        column-gap: converter(8);
+                        align-items: center;
+                        margin-bottom: converter(16);
+
+                        .card__h4 {
+                            margin: 0;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .card__list {
+                        .card__list-items {
+                            padding: 0;
+                        }
+                    }
+                }
+
+            }
+
+            >.swiper-pagination {
+
+                .swiper-pagination-bullet {
+                    background: colors.$linear_orange-to-white;
+                }
+            }
+        }
     }
+}
 
-    .carousel {
-        .carousel-indicators {
-            bottom: converter(-40);
+@media screen and (min-width: 600px) {
+    .section__specs {
+        width: 100%;
+
+        .h2-section {
+            background: colors.$linear_orange-to-white;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: converter(24)
         }
 
-        .carousel-inner {
+        .specs-carousel {
+            width: 100%;
+            height: 100%;
 
-            .carousel-item {
-                background-color: colors.$black_Eerie;
-                padding: converter(20);
-                border-radius: converter(8);
+            >.swiper-wrapper {
                 width: 100%;
-                height: converter(190);
-                opacity: 0.1;
-                transition: all 0.4s ease-in-out;
 
-                .card__title {
-                    display: flex;
-                    column-gap: converter(8);
-                    align-items: center;
-                    margin-bottom: converter(16);
+                .swiper-slide {
+                    background-color: colors.$black_Eerie;
+                    padding: converter(20);
+                    border-radius: converter(8);
+                    width: 100%;
+                    height: converter(190);
+                    transition: all 0.4s ease-in-out;
 
-                    .card__h4 {
-                        margin: 0;
-                        text-transform: capitalize;
+                    .card__title {
+                        display: flex;
+                        column-gap: converter(8);
+                        align-items: center;
+                        margin-bottom: converter(16);
+
+                        .card__h4 {
+                            margin: 0;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .card__list {
+                        .card__list-items {
+                            padding: 0;
+                        }
                     }
                 }
 
-                .card__list {
-                    .card__list-items {
-                        padding: 0;
-                    }
-                }
-
-                &.active {
-                    opacity: 1;
-                }
             }
-        }
 
-        .carousel-control-prev {
-            position: absolute;
-            top: 220px;
-            left: 30%;
+            >.swiper-pagination {
 
-            border-radius: 50%;
-            border: 1px solid #fff;
-            height: converter(40);
-
-            img {
-                transform: rotate(90deg);
-            }
-        }
-
-        .carousel-control-next {
-            position: absolute;
-            top: 220px;
-            right: 30%;
-
-            border-radius: 50%;
-            border: 1px solid #fff;
-            height: converter(40);
-
-            img {
-                transform: rotate(-90deg);
+                .swiper-pagination-bullet {
+                    background: colors.$linear_orange-to-white;
+                }
             }
         }
     }

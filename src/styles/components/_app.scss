@@ -41,3 +41,23 @@
         background-position: 350px 65px;
     }
 }
+
+@media screen and (min-width: 900px) {
+    #app {
+        background-position: 450px 65px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #app {
+        background-size: 500px;
+        background-position: 500px 65px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #app {
+        background-size: 700px;
+        background-position: 750px -150px;
+    }
+}

@@ -79,6 +79,10 @@ main {
     max-width: 100dvw;
 }
 
+section {
+    margin: converter(48) 0;
+}
+
 .main-2 {
     background-color: colors.$black_Eerie;
 }

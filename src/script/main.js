@@ -1,3 +1,4 @@
+// Função que limita a distância do menu de navegação ao Header
 function initHeightNavigation(){
     const navHeader = document.querySelector('#nav-header');
     
@@ -16,6 +17,7 @@ function initHeightNavigation(){
 }
 initHeightNavigation();
 
+// Função que determina o modelo de menu, baseado no dispositivo
 function initNavigationMobile(){
     const btnMobile = document.querySelector('#menu-burguer');
     
@@ -32,6 +34,7 @@ function initNavigationMobile(){
 }
 initNavigationMobile();
 
+// Função que delimita a margem do topo da seção Hero ao Header
 function initOffsetTopSectionHero(){
     const sectionHero = document.querySelector('#section-hero');
     
@@ -42,6 +45,7 @@ function initOffsetTopSectionHero(){
 }
 initOffsetTopSectionHero();
 
+// Função que modifica a cor background do header
 function initScrollHeader(){
     function scrollHeader() {
         const bgHeader = document.querySelector('header');
@@ -61,16 +65,7 @@ function initScrollHeader(){
 }
 initScrollHeader();
 
-function initSectionOffsetTop(){
-    const sections = Array.from(document.querySelectorAll('section'))
-    const heightHeader = document.querySelector('header').offsetHeight;
-    
-    sections.forEach((section)=>{
-        section.style.marginTop = heightHeader + 'px';
-    });
-}
-initSectionOffsetTop();
-
+// Função de scroll dos links internos
 function initScrollLinkInternos(){
     const linksInternos = Array.from(document.querySelectorAll('#nav-header a[href^="#"]'));
     
@@ -101,7 +96,55 @@ function initScrollLinkInternos(){
 }
 initScrollLinkInternos();
 
+const mobile = window.matchMedia("(min-width: 320px) and (max-width: 599px)").matches;
+const tablet = window.matchMedia("(min-width: 600px)").matches;
 
+if (mobile){
+    let swiper = new Swiper(".specs-carousel", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        grabCursor: true,
+        effect: "creative",
+        loop: true,
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: ["-20%", 0, -1],
+            },
+            next: {
+                translate: ["100%", 0, 0],
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+    });
+} else if(tablet){
+    let swiper = new Swiper(".specs-carousel", {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        grabCursor: true,
+        effect: "coverflow",
+        loop: true,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+    });
+}
+
+// Funcionalidade do carousel da seção modelos
 function initCarouselCube(){
     var swiper = new Swiper(".mySwiper", {
         // slidesPerView: 1,
@@ -123,6 +166,7 @@ function initCarouselCube(){
 }
 initCarouselCube();
 
+// Função de scroll para os links do footer
 function initScrollLinkFooter(){
     const linksFooter = Array.from(document.querySelectorAll('footer a[href^="#"]'));
     
