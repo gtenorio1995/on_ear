@@ -15,58 +15,95 @@
 }
 
 // config Models
-.section__contact {
-    background-color: colors.$black_Eerie;
-    padding: converter(24) 0;
-    margin: 0;
+@media screen and (min-width: 320px) {
+    .section__contact {
+        background-color: colors.$black_Eerie;
+        padding: converter(24) 0;
+        margin: 0;
 
-    .contact__form {
-        @include display(1fr, auto);
-        row-gap: converter(16);
+        .contact__form {
+            @include display(1fr, auto);
+            row-gap: converter(16);
 
-        >div {
-            display: flex;
-            flex-direction: column;
+            >div {
+                display: flex;
+                flex-direction: column;
 
-            >label {
-                text-transform: capitalize;
-                font-family: 'Poppins', sans-serif;
+                >label {
+                    text-transform: capitalize;
+                    font-family: 'Poppins', sans-serif;
+                    background: colors.$linear_orange-to-white;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+
+                >input {
+                    border-radius: converter(8);
+                    border: 1px solid transparent;
+                    height: converter(24);
+                    padding: converter(16) converter(8);
+                    background: colors.$white_text;
+                    color: colors.$black_night;
+                }
+
+                >textarea {
+                    width: 100%;
+                    height: converter(120);
+                    border: 1px solid transparent;
+                    border-radius: converter(8);
+                    resize: none;
+                    padding: converter(8);
+                }
+            }
+
+            .form__btn-submit {
+                padding: converter(8) converter(16);
+                border-radius: converter(8);
+                border: 1px solid transparent;
+                width: converter(96);
+                justify-self: right;
                 background: colors.$linear_orange-to-white;
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-            }
 
-            >input {
-                border-radius: converter(8);
-                border: 1px solid transparent;
-                height: converter(24);
-                padding: converter(16) converter(8);
-                background: colors.$white_text;
-                color: colors.$black_night;
-            }
-
-            >textarea {
-                width: 100%;
-                height: converter(120);
-                border: 1px solid transparent;
-                border-radius: converter(8);
-                resize: none;
-                padding: converter(8);
+                &:hover {
+                    box-shadow: colors.$orange 0px 30px 60px -12px inset, colors.$orange 0px 18px 36px -18px inset;
+                }
             }
         }
+    }
+}
 
-        .form__btn-submit {
-            padding: converter(8) converter(16);
-            border-radius: converter(8);
-            border: 1px solid transparent;
-            width: converter(96);
-            justify-self: right;
-            background: colors.$linear_orange-to-white;
+@media screen and (min-width: 768px) {
+    .section__contact {
+        background-image: url(/src/img/67419099_9662742_vermelho_inverter.png);
+        background-size: cover;
+        background-size: 350px;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        background-position-x: converter(30);
 
-            &:hover {
-                box-shadow: colors.$orange 0px 30px 60px -12px inset, colors.$orange 0px 18px 36px -18px inset;
+        .contact__form {
+            @include display(1fr 1fr, auto);
+            column-gap: converter(16);
+
+            >div {
+
+                >input {
+                    width: 100%;
+                }
+            }
+
+            .form__btn-submit {
+                grid-column: 2;
+                align-self: end;
             }
         }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .section__contact {
+        background-position-y: bottom;
+        background-position-x: converter(120);
     }
 }

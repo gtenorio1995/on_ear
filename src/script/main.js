@@ -17,6 +17,19 @@ function initHeightNavigation(){
 }
 initHeightNavigation();
 
+// function initButtonBuyHero(){
+//     const btnBuyHero = document.querySelector('#btn-add-cart');
+    
+//     if(btnBuyHero){
+//         function handleClickBtnBuyHero(){
+//             const modal = document.querySelector('#modal-hero');
+//             modal.classList.add('modal_ativo')
+//         }
+//         btnBuyHero.addEventListener('click', handleClickBtnBuyHero)
+//     }
+// }
+// initButtonBuyHero();
+
 // Função que determina o modelo de menu, baseado no dispositivo
 function initNavigationMobile(){
     const btnMobile = document.querySelector('#menu-burguer');
@@ -96,53 +109,156 @@ function initScrollLinkInternos(){
 }
 initScrollLinkInternos();
 
-const mobile = window.matchMedia("(min-width: 320px) and (max-width: 599px)").matches;
-const tablet = window.matchMedia("(min-width: 600px)").matches;
+// funcionalidade do carousel Specs em diversos Devices
+function initCarouselSpecsMediaDevice(){
+    const mobile = window.matchMedia("(min-width: 320px) and (max-width: 599px)").matches;
+    const tablet = window.matchMedia("(min-width: 600px) and (max-width: 1023px").matches;
+    const desktop = window.matchMedia("(min-width: 1024px)").matches;
 
-if (mobile){
-    let swiper = new Swiper(".specs-carousel", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        grabCursor: true,
-        effect: "creative",
-        loop: true,
-        creativeEffect: {
-            prev: {
-                shadow: true,
-                translate: ["-20%", 0, -1],
+    if (mobile){
+        // Specs Carousel
+        let swiper = new Swiper(".specs-carousel", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            grabCursor: true,
+            effect: "creative",
+            loop: true,
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: ["-20%", 0, -1],
+                },
+                next: {
+                    translate: ["100%", 0, 0],
+                },
             },
-            next: {
-                translate: ["100%", 0, 0],
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
             },
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-        },
-    });
-} else if(tablet){
-    let swiper = new Swiper(".specs-carousel", {
-        slidesPerView: 2,
-        spaceBetween: 16,
-        grabCursor: true,
-        effect: "coverflow",
-        loop: true,
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-        },
-    });
+        });
+        
+    } else if(tablet){
+        // Specs Carousel
+        let swiper = new Swiper(".specs-carousel", {
+            slidesPerView: 2,
+            spaceBetween: 16,
+            grabCursor: true,
+            effect: "coverflow",
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+        });
+    } else if(desktop){
+        // Specs Models
+        let swiper = new Swiper(".specs-carousel", {
+            slidesPerView: 3,
+            spaceBetween: 16,
+            grabCursor: true,
+            effect: "coverflow",
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+        });
+    }
 }
+initCarouselSpecsMediaDevice();
+
+// funcionalidade do carousel Models em diversos Devices
+function initCarouselModelsMediaDevice(){
+    const mobile = window.matchMedia("(min-width: 320px) and (max-width: 599px)").matches;
+    const tablet = window.matchMedia("(min-width: 600px) and (max-width: 1023px").matches;
+    const desktop = window.matchMedia("(min-width: 1024px)").matches;
+    
+    if(mobile){
+        // Models Carousel
+        let swiper = new Swiper(".models-carousel", {
+            // slidesPerView: 1,
+            effect: "cube",
+            grabCursor: true,
+            cubeEffect: {
+              shadow: false,
+              slideShadows: false,
+              shadowOffset: 0,
+              shadowScale: 0,
+            },
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+        });
+    } else if(tablet){
+        // Models Carousel
+        let swiper = new Swiper(".models-carousel", {
+            slidesPerView: 2,
+            spaceBetween: 16,
+            grabCursor: true,
+            effect: "coverflow",
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+        });
+    } else if(desktop){
+        // Models Models
+        let swiper = new Swiper(".models-carousel", {
+            slidesPerView: 3,
+            spaceBetween: 16,
+            grabCursor: true,
+            effect: "coverflow",
+            loop: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+        });
+    }
+}
+initCarouselModelsMediaDevice();
 
 // Funcionalidade do carousel da seção modelos
 function initCarouselCube(){
