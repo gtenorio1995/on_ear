@@ -45,6 +45,7 @@
   }
   header .container .header__nav__nav-header ul {
     background-color: hsl(0, 0%, 15%);
+    padding-left: 0;
   }
   header .container .header__nav__nav-header ul li {
     padding: 1rem 0;
