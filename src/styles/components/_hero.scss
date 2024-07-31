@@ -18,6 +18,7 @@
 @media screen and (min-width: 320px) {
     .section__hero {
         padding-top: converter(16);
+        position: relative;
 
         .hero__h1 {
             margin-bottom: converter(20);
@@ -64,9 +65,46 @@
             }
         }
 
-        // .hero__modal {
-        //     padding: converter(20);
-        // }
+        .hero__modal {
+            opacity: 0;
+            padding: converter(20);
+            position: absolute;
+            background-color: colors.$black_Eerie;
+            border: 2px solid colors.$orange;
+            border-radius: converter(8);
+            z-index: 10;
+            left: converter(10);
+            top: converter(100);
+            right: converter(10);
+
+            @include display(3fr 1fr, auto);
+            gap: converter(16);
+
+            .modal__title {
+                font-size: converter(24);
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .modal__btn__close {
+                width: converter(32);
+                height: converter(32);
+                background: transparent;
+                border: none;
+                justify-self: end;
+            }
+
+            .modal__text {
+                grid-column: 1 / -1;
+            }
+
+            >img {
+                height: converter(100);
+            }
+
+            &.modal_ativo {
+                opacity: 1;
+            }
+        }
     }
 }
 

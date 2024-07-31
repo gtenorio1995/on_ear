@@ -75,6 +75,15 @@
                             text-transform: capitalize;
                             color: colors.$white_text;
                         }
+
+                        &:hover {
+                            background: colors.$linear_orange-to-white;
+                            cursor: pointer;
+
+                            a {
+                                color: colors.$black_Eerie;
+                            }
+                        }
                     }
                 }
 

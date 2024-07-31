@@ -17,20 +17,20 @@ function initHeightNavigation(){
 }
 initHeightNavigation();
 
-// function initButtonBuyHero(){
-//     const btnBuyHero = document.querySelector('#btn-add-cart');
+function initButtonBuyHero(){
+    const btnBuyHero = document.querySelector('#btn-add-cart');
     
-//     if(btnBuyHero){
-//         function handleClickBtnBuyHero(){
-//             const modal = document.querySelector('#modal-hero');
-//             modal.classList.add('modal_ativo')
-//         }
-//         btnBuyHero.addEventListener('click', handleClickBtnBuyHero)
-//     }
-// }
-// initButtonBuyHero();
+    if(btnBuyHero){
+        function handleClickBtnBuyHero(){
+            const modal = document.querySelector('#modal-hero');
+            modal.classList.add('modal_ativo')
+        }
+        btnBuyHero.addEventListener('click', handleClickBtnBuyHero)
+    }
+}
+initButtonBuyHero();
 
-// Função que determina o modelo de menu, baseado no dispositivo
+// Funcionalidade do menu burguer.
 function initNavigationMobile(){
     const btnMobile = document.querySelector('#menu-burguer');
     

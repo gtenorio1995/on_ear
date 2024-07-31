@@ -54,6 +54,13 @@
     text-transform: capitalize;
     color: hsl(0, 0%, 92%);
   }
+  header .container .header__nav__nav-header ul li:hover {
+    background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
+    cursor: pointer;
+  }
+  header .container .header__nav__nav-header ul li:hover a {
+    color: hsl(0, 0%, 10%);
+  }
   header .container .header__nav__nav-header.open-menu {
     transform: translate3d(0%, 0, 0);
   }
@@ -156,6 +163,7 @@
 @media screen and (min-width: 320px) {
   .section__hero {
     padding-top: 1rem;
+    position: relative;
   }
   .section__hero .hero__h1 {
     margin-bottom: 1.25rem;
@@ -194,6 +202,42 @@
   }
   .section__hero .hero__cta .hero__btn__add-cart p {
     display: none;
+  }
+  .section__hero .hero__modal {
+    opacity: 0;
+    padding: 1.25rem;
+    position: absolute;
+    background-color: hsl(0, 0%, 10%);
+    border: 2px solid hsl(20, 85%, 45%);
+    border-radius: 0.5rem;
+    z-index: 10;
+    left: 0.625rem;
+    top: 6.25rem;
+    right: 0.625rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .section__hero .hero__modal .modal__title {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+  }
+  .section__hero .hero__modal .modal__btn__close {
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    justify-self: end;
+  }
+  .section__hero .hero__modal .modal__text {
+    grid-column: 1/-1;
+  }
+  .section__hero .hero__modal > img {
+    height: 6.25rem;
+  }
+  .section__hero .hero__modal.modal_ativo {
+    opacity: 1;
   }
 }
 @media screen and (min-width: 768px) {
@@ -589,6 +633,12 @@ footer > .container .copy {
   #app {
     background-size: 500px;
     background-position: 700px -20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #app {
+    background-size: 500px;
+    background-position: 940px -20px;
   }
 }
 * {
