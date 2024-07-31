@@ -75,15 +75,6 @@
                             text-transform: capitalize;
                             color: colors.$white_text;
                         }
-
-                        &:hover {
-                            background: colors.$linear_orange-to-white;
-                            cursor: pointer;
-
-                            a {
-                                color: colors.$black_Eerie;
-                            }
-                        }
                     }
                 }
 
@@ -200,15 +191,6 @@
                                 background-clip: text;
                                 -webkit-background-clip: text;
                                 color: transparent;
-                            }
-                        }
-
-                        &:hover {
-                            background: transparent;
-                            cursor: pointer;
-
-                            a {
-                                color: colors.$orange;
                             }
                         }
                     }
