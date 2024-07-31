@@ -54,13 +54,6 @@
     text-transform: capitalize;
     color: hsl(0, 0%, 92%);
   }
-  header .container .header__nav__nav-header ul li:hover {
-    background: linear-gradient(hsl(0, 0%, 95%), hsl(20, 85%, 45%));
-    cursor: pointer;
-  }
-  header .container .header__nav__nav-header ul li:hover a {
-    color: hsl(0, 0%, 10%);
-  }
   header .container .header__nav__nav-header.open-menu {
     transform: translate3d(0%, 0, 0);
   }
